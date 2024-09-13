@@ -40,7 +40,6 @@
     <div class="output">
         <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // Check if 'filename' is set in the POST request
             if (isset($_POST['filename'])) {
                 $filename = $_POST['filename'];
 
