@@ -60,11 +60,24 @@
                     <pre><?php echo htmlspecialchars($fileContent); ?></pre>
                     <?php
                 }
+                $lines = file($filename);
+                    echo "<h2>File content (line by line):</h2>";
+                    echo "<pre>";
+                    foreach ($lines as $line_num => $line) {
+                        echo "Line #<strong>{$line_num}</strong>: " . htmlspecialchars($line) . "<br>";
+                    }
+                    echo "</pre>";
+            }
             } else {
                 echo "<p>No file selected. Please choose a filename.</p>";
             }
         }
         ?>
+    </div>
+    <div class="output">
+        <?php
+print_r(file($filename));
+?>
     </div>
 </body>
 </html>
